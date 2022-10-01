@@ -1,0 +1,355 @@
+/* 
+    *************************************
+              HEADER 
+    *************************************
+*/
+
+.btn__sub,
+.btn__map {
+  border: 3px solid var(--primary-color);
+  width: 30rem;
+}
+
+/* 
+    *************************************
+              FEATURE SECTION 
+    *************************************
+*/
+
+.feature-section,
+.partners-section {
+  position: relative;
+  background-image: url(../img/goldenwave.png);
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+}
+
+.vawes {
+  position: relative;
+  overflow: hidden;
+  padding: 14.4rem 0 12.8rem 0;
+}
+
+.grid-vawes-img {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  z-index: -2;
+}
+
+.apps {
+  padding: 8rem 0 12.8rem 0;
+}
+
+.subtitle__white {
+  color: #fff;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 2.4rem;
+  text-shadow: 0 0 5rem #9b8645;
+  letter-spacing: 1.8rem;
+  font-size: 6.4em;
+}
+
+.feature-box {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.feature-desc {
+  font-size: 3.2em;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 0 1rem #9b8645;
+  width: 60%;
+}
+
+/* 
+    *************************************
+              HUB SECTION 
+    *************************************
+*/
+
+.hub-section {
+  padding: var(--section-padding);
+}
+
+.content-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 9.6rem;
+}
+
+.text-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  align-items: flex-start;
+  width: 80%;
+}
+
+.text-box:nth-child(odd) {
+  justify-self: end;
+}
+
+.descr-title {
+  font-size: 6.2rem;
+  color: var(--primary-color);
+}
+
+.hub-text {
+  position: relative;
+}
+
+.more {
+  font-size: 2.4rem;
+  font-weight: 500;
+  margin-top: auto;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.more__right {
+  margin-left: auto;
+}
+
+.more:hover {
+  color: var(--primary-color);
+}
+
+.img-box-shape {
+  position: absolute;
+  top: 0;
+  right: -25%;
+  height: 100%;
+  z-index: -1;
+}
+
+.shape-img {
+  height: 100%;
+}
+
+.img-box {
+  display: flex;
+  align-items: flex-start;
+}
+
+.hub.img-box:nth-child(odd) {
+  justify-content: flex-start;
+}
+
+.hub.img-box:nth-child(even) {
+  justify-content: flex-end;
+}
+
+.hub.img-box.centered {
+  justify-content: center;
+}
+
+.hub-img {
+  width: 85%;
+}
+
+.soc-items__hub .bi {
+  color: var(--main-color);
+}
+
+.golden-strip {
+  display: block;
+  position: absolute;
+  top: -10%;
+  transform: translateX(-50%);
+  height: 170%;
+  width: 100vw;
+  background-color: var(--golden-color);
+  z-index: -1;
+}
+
+/* 
+    *************************************
+              PARTNERS SECTION 
+    *************************************
+*/
+
+.partners-img-box {
+  display: flex;
+  justify-content: center;
+}
+
+.partner-img {
+  width: 20%;
+}
+
+.subtitle__white.partners {
+  letter-spacing: normal;
+}
+
+/* 
+    *************************************
+              TEAM / NEWS SECTION 
+    *************************************
+*/
+.team-section,
+.news-section {
+  padding: var(--section-padding);
+}
+
+/* figures */
+/* semicircle */
+.semicircles {
+  position: absolute;
+  top: 15rem;
+  left: 8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  z-index: 5;
+}
+
+.semicircles.news-block {
+  transform: rotate(180deg);
+  left: auto;
+  right: 8rem;
+}
+
+.semicircle {
+  width: 10rem;
+  height: 5rem;
+  background-color: var(--primary-color);
+  border-bottom-left-radius: 5.5rem;
+  border-bottom-right-radius: 5.5rem;
+  border-top: 0;
+}
+
+/* triangles */
+.triangles {
+  position: absolute;
+  bottom: 1rem;
+  left: 25rem;
+  display: flex;
+  gap: 3.2rem;
+  z-index: 5;
+}
+
+.triangles.news-block {
+  transform: rotate(180deg);
+  left: auto;
+  right: 25rem;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 3rem solid transparent;
+  border-right: 3rem solid transparent;
+  border-bottom: 5rem solid var(--primary-color);
+}
+
+/* strips */
+.strips {
+  position: absolute;
+  right: 3rem;
+  bottom: 7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  z-index: 5;
+}
+
+.strips.news-block {
+  transform: rotate(90deg);
+  right: auto;
+  left: 20rem;
+  bottom: 1rem;
+}
+
+.strip {
+  width: 16rem;
+  height: 1.5rem;
+  background-color: var(--primary-color);
+}
+
+.rarr {
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.rarr:hover {
+  color: var(--main-color);
+}
+
+.team-card,
+.news-card {
+  display: flex;
+  gap: 2.4rem;
+  width: 80%;
+  margin: 3.2rem auto;
+  padding: 2.4rem 4.4rem 4.4rem 4.4rem;
+  box-shadow: 0 1.2rem 3rem rgba(0, 0, 0, 0.15);
+}
+
+.team-desc,
+.news-desc {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  width: 49%;
+}
+
+.name {
+  font-size: 4.4rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.position,
+.title-news {
+  font-size: 2.4rem;
+  text-transform: uppercase;
+}
+
+.title-news {
+  font-weight: 500;
+}
+
+.team-about {
+  font-size: 1.6rem;
+}
+
+.more.more__news {
+  font-size: 1.8rem;
+}
+
+.team-img-box,
+.news-img-box {
+  width: 49%;
+}
+
+.team-img,
+.news-img {
+  width: 100%;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--main-color);
+}
+
+.breaks {
+  font-size: 2.4rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-left: 35rem;
+}
+
+.news-logo-img {
+  position: absolute;
+  top: 8rem;
+  left: 8rem;
+  width: 14rem;
+  height: 14rem;
+  z-index: 5;
+}
