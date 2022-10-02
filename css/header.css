@@ -173,6 +173,11 @@ nav {
   gap: 3.2rem;
 }
 
+.soc-icon {
+  display: flex;
+  align-items: center;
+}
+
 .bi {
   width: 3rem;
   height: 3rem;

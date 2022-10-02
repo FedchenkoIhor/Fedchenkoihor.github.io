@@ -146,6 +146,7 @@
 }
 
 .hub.img-box.centered {
+  position: relative;
   justify-content: center;
 }
 
@@ -157,12 +158,50 @@
   color: var(--main-color);
 }
 
+.soc-items__hub {
+  gap: 2rem;
+}
+
+.account {
+  position: relative;
+  padding-left: 1rem;
+  padding-bottom: 2px;
+  font-size: 1.6rem;
+  color: var(--main-color);
+}
+
+.account::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 100%;
+  height: 1px;
+  background-color: var(--main-color);
+  transition: all 0.3s;
+}
+.account:hover::after {
+  left: 0;
+  right: 0;
+}
+
 .golden-strip {
   display: block;
   position: absolute;
   top: -10%;
   transform: translateX(-50%);
   height: 170%;
+  width: 100vw;
+  background-color: var(--golden-color);
+  z-index: -1;
+}
+
+.golden-strip-img {
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 50%;
   width: 100vw;
   background-color: var(--golden-color);
   z-index: -1;
@@ -238,6 +277,7 @@
   transform: rotate(180deg);
   left: auto;
   right: 25rem;
+  bottom: 4rem;
 }
 
 .triangle {

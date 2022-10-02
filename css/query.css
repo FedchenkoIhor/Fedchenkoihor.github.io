@@ -1,0 +1,319 @@
+/* 
+    *************************************
+              BELOW 1120px 
+    *************************************
+*/
+
+@media (max-width: 70em) {
+  h1 {
+    margin-left: 3rem;
+  }
+
+  .apps {
+    padding-top: 3.2rem;
+  }
+
+  .feature-desc {
+    width: 80%;
+  }
+
+  .hub-img {
+    width: 95%;
+  }
+
+  .soc-items__hub {
+    width: 150%;
+  }
+
+  .text-box {
+    width: 90%;
+  }
+
+  .golden-strip {
+    height: 120%;
+  }
+
+  .team-card,
+  .news-card {
+    width: 90%;
+  }
+}
+
+/* 
+    *************************************
+        BELOW 1040px Landscape tablet
+    *************************************
+*/
+
+@media (max-width: 65em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+/* 
+    *************************************
+        BELOW 928px Tablet
+    *************************************
+*/
+
+@media (max-width: 58em) {
+  /* 8px */
+  html {
+    font-size: 50%;
+  }
+
+  .hero-box {
+    gap: 0;
+  }
+
+  .hero.text-box {
+    width: 100%;
+  }
+
+  .vawes {
+    height: auto;
+  }
+
+  .grid-vawes-img {
+    height: 100%;
+    width: auto;
+  }
+
+  .apps {
+    padding: 0;
+  }
+
+  .content-box {
+    grid-template-columns: 1fr;
+    row-gap: 4.8rem;
+  }
+
+  .text-box,
+  .text-box:nth-child(odd) {
+    justify-self: center;
+  }
+
+  .shape-img {
+    display: none;
+  }
+
+  .img-box {
+    width: 100%;
+  }
+
+  .text-box:nth-child(3) {
+    grid-row: 4;
+  }
+
+  .text-box:nth-child(6) {
+    grid-row: 8;
+  }
+
+  .hub-img {
+    width: 70%;
+  }
+
+  .golden-strip {
+    display: none;
+  }
+
+  .golden-strip-img {
+    display: block;
+  }
+
+  .soc-items__hub {
+    width: 100%;
+  }
+
+  .btn__full {
+    position: static;
+    margin: 0 auto;
+  }
+
+  .team-card,
+  .news-card {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .team-desc,
+  .news-desc {
+    width: 80%;
+  }
+
+  .team-img-box,
+  .news-img-box {
+    width: 80%;
+  }
+
+  .news-logo-img {
+    width: 10rem;
+    height: 10rem;
+  }
+}
+
+/* 
+    *************************************
+        BELOW 768px Small Tablet
+    *************************************
+*/
+
+@media (max-width: 48em) {
+  :root {
+    --section-padding: 4.8rem 0;
+  }
+
+  .apps {
+    gap: 3.2rem;
+  }
+
+  .feature-desc {
+    font-size: 3em;
+  }
+
+  .subtitle.subtitle__white {
+    font-size: 4.4rem;
+  }
+
+  .semicircles,
+  .triangles,
+  .strips,
+  .strips.news-block {
+    transform: scale(0.8);
+  }
+
+  .semicircles.news-block,
+  .triangles.news-block {
+    transform: scale(0.8) rotate(180deg);
+  }
+
+  .semicircles.news-block {
+    right: 6rem;
+  }
+
+  .triangles.news-block {
+    right: 15rem;
+    bottom: 6rem;
+  }
+
+  .strips.news-block {
+    transform: scale(0.8) rotate(90deg);
+    left: 10rem;
+    bottom: -1rem;
+  }
+
+  .semicircles {
+    left: 6rem;
+  }
+
+  .strips {
+    right: 1rem;
+  }
+
+  .breaks {
+    font-size: 2rem;
+    margin-left: 25rem;
+  }
+
+  .news-logo-img {
+    left: 3rem;
+  }
+
+  footer {
+    padding-top: 4.8rem;
+  }
+
+  .footer-box {
+    width: 55%;
+  }
+
+  .copyright {
+    width: 100%;
+  }
+}
+
+/* 
+    *************************************
+        BELOW 544px Phone
+    *************************************
+*/
+
+@media (max-width: 34em) {
+  h1 {
+    font-size: 2.4rem;
+    letter-spacing: 1rem;
+  }
+
+  .earth-img {
+    width: 50%;
+  }
+
+  .grid-img {
+    top: 20%;
+  }
+
+  .title-box {
+    padding: 0;
+  }
+
+  .container {
+    padding: 0 2.4rem;
+  }
+
+  .subtitle.subtitle__white {
+    font-size: 3.6rem;
+  }
+
+  .feature-desc {
+    width: 100%;
+    font-size: 2rem;
+  }
+
+  .hub-img {
+    width: 85%;
+  }
+
+  .subtitle {
+    font-size: 3rem;
+  }
+
+  .descr-title {
+    font-size: 5.2rem;
+  }
+
+  .partner-img {
+    width: 35%;
+  }
+
+  .team-card,
+  .news-card {
+    width: 90%;
+    padding: 2.4rem;
+    margin-top: 0;
+  }
+
+  .team-desc,
+  .news-desc {
+    width: 100%;
+    gap: 1.8rem;
+  }
+
+  .name {
+    font-size: 3.6rem;
+  }
+
+  .square {
+    width: 1.8rem;
+    height: 1.8rem;
+    background-color: var(--main-dark-color);
+  }
+
+  .btn__full {
+    padding: 1.2rem 1.4rem;
+  }
+
+  .footer-box {
+    width: 75%;
+  }
+}
