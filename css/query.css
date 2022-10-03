@@ -13,10 +13,6 @@
     padding-top: 3.2rem;
   }
 
-  .feature-desc {
-    width: 80%;
-  }
-
   .hub-img {
     width: 95%;
   }
@@ -168,10 +164,6 @@
     gap: 3.2rem;
   }
 
-  .feature-desc {
-    font-size: 3em;
-  }
-
   .subtitle.subtitle__white {
     font-size: 4.4rem;
   }
@@ -270,7 +262,6 @@
   }
 
   .feature-desc {
-    width: 100%;
     font-size: 2rem;
   }
 
@@ -288,6 +279,61 @@
 
   .partner-img {
     width: 35%;
+  }
+
+  .team-section,
+  .news-section {
+    overflow: hidden;
+  }
+
+  .semicircles,
+  .triangles,
+  .strips,
+  .strips.news-block {
+    transform: scale(0.7);
+  }
+
+  .strips {
+    right: -7rem;
+  }
+
+  .strips.news-block {
+    left: -7rem;
+    bottom: 10rem;
+  }
+
+  .semicircles.news-block,
+  .triangles.news-block {
+    transform: scale(0.7) rotate(180deg);
+  }
+
+  .semicircles {
+    top: 8rem;
+    left: 1rem;
+  }
+  .semicircles.news-block {
+    right: 0.6rem;
+  }
+
+  .triangles.news-block {
+    right: 5rem;
+    bottom: 3rem;
+  }
+
+  .breaks {
+    font-size: 1.8rem;
+    margin: 0 auto;
+  }
+
+  .news-logo-img {
+    top: 3rem;
+    left: -1rem;
+    transform: scale(0.7);
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
   }
 
   .team-card,

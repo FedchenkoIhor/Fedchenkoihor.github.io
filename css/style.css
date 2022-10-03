@@ -59,16 +59,15 @@
 }
 
 .feature-desc {
+  display: inline-block;
   font-size: 2.4rem;
   color: #fff;
   text-align: center;
   text-shadow: 0 0 1rem #9b8645;
-  width: 65%;
 }
 
-.feature-desc.inner {
+.align-left {
   text-align: left;
-  width: 100%;
 }
 
 /* 

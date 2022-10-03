@@ -193,19 +193,6 @@ const swiper = new Swiper(".mySwiper", {
     delay: 5000,
     disableOnInteraction: false,
   },
-  freeMode: {
-    enabled: true,
-  },
-  breakpoints: {
-    // when window width is >= 928px
-    928: {
-      // slidesPerView: 3,
-    },
-    // when window width is >= 544px
-    544: {
-      // slidesPerView: 2,
-    },
-  },
 });
 
 // SWIPER SLIDER (PARTNERS)
