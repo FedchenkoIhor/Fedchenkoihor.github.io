@@ -37,7 +37,9 @@ const obs = new IntersectionObserver(
 obs.observe(sectionHeroEl);
 
 // OPEN / CLOSE MOBILE MENU
-btnMobileMenu.addEventListener("click", () => {
+btnMobileMenu.addEventListener("click", closeOpenMenu);
+
+function closeOpenMenu() {
   btnMobileMenu.classList.toggle("open");
   if (btnMobileMenu.classList.contains("open")) {
     btnMobileMenu.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
@@ -50,7 +52,7 @@ btnMobileMenu.addEventListener("click", () => {
   </svg>`;
     menuItems.style.left = "-100%";
   }
-});
+}
 
 // CONTROL CURRENT SCREEN SIZE
 function screenSize() {
@@ -64,6 +66,10 @@ function screenSize() {
 }
 window.addEventListener("resize", screenSize);
 window.onload = screenSize();
+
+/////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////
+// SOCIAL NETWORKS ICONS
 
 // CREATE SOCIAL NETWORKS LIST
 const xmlns = "http://www.w3.org/2000/svg";
@@ -184,6 +190,8 @@ followUsBtn.addEventListener("click", () => {
     : elemShowHidde(socBox, "none");
 });
 
+/////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////
 // SWIPER SLIDER
 const swiper = new Swiper(".mySwiper", {
   slidesPerView: 1,
@@ -238,4 +246,22 @@ const swiperNews = new Swiper(".mySwiperNews", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
+});
+
+/////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////
+
+// MENU NAVIGATION
+// SMOOTH SCROLING TO ALL MENU ITEMS
+const navLinks = document.querySelector(".menu-items");
+navLinks.addEventListener("click", (e) => {
+  e.preventDefault();
+  if (e.target.classList.contains("nav__link")) {
+    const id = e.target.getAttribute("href");
+    document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+    closeOpenMenu();
+  }
 });
