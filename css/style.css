@@ -66,17 +66,9 @@
   width: 65%;
 }
 
-.feature-span {
-  display: block;
-}
-
-.feature-ul {
-  list-style-type: circle;
-  font-size: 2.4rem;
-  color: #fff;
-  gap: 1.6rem;
-  text-shadow: 0 0 1rem #9b8645;
-  width: 65%;
+.feature-desc.inner {
+  text-align: left;
+  width: 100%;
 }
 
 /* 
