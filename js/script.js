@@ -218,9 +218,6 @@ const swiperTeam = new Swiper(".mySwiperTeam", {
   //   delay: 5000,
   //   disableOnInteraction: false,
   // },
-  freeMode: {
-    enabled: true,
-  },
   // Navigation arrows
   navigation: {
     nextEl: ".swiper-button-next",
@@ -228,18 +225,14 @@ const swiperTeam = new Swiper(".mySwiperTeam", {
   },
 });
 
-// SWIPER SLIDER (TEAM)
+// SWIPER SLIDER (NEWS)
 const swiperNews = new Swiper(".mySwiperNews", {
   slidesPerView: 1,
   loop: true,
-  centeredSlides: true,
   // autoplay: {
   //   delay: 5000,
   //   disableOnInteraction: false,
   // },
-  freeMode: {
-    enabled: true,
-  },
   // Navigation arrows
   navigation: {
     nextEl: ".swiper-button-next",
