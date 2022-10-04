@@ -10,6 +10,14 @@ const elemShowHidde = (elem, event) => {
   elem.style.display = event;
 };
 
+// GET DATA FROM SERVER
+async function fetchData(url, method, data) {
+  return await fetch(url, {
+    method: `${method}`,
+    body: JSON.stringify(data),
+  }).then((response) => response.json());
+}
+
 // STICKY NAVIGATION
 const sectionHeroEl = document.querySelector("header");
 const btnMobileMenu = document.querySelector(".btn__mobile-menu");
@@ -147,16 +155,16 @@ class Social {
 }
 
 class App {
-  static renderSocialIcons(socialIcons, id, template) {
+  static renderHTMLPart(arrData, id, nameClass, template = false, n) {
     const fragment = document.createDocumentFragment();
     let arr = [];
     template
       ? (arr = socialIcons.filter(function (e) {
           return this.indexOf(e.name) >= 0;
         }, template))
-      : (arr = socialIcons);
-    arr.forEach((el) => {
-      fragment.appendChild(new Social(el).createContentTemplate(template));
+      : (arr = [...arrData]);
+    arr.slice(-n).forEach((el) => {
+      fragment.appendChild(new nameClass(el).createContentTemplate(template));
     });
     const el = document.getElementById(id);
     el.appendChild(fragment);
@@ -168,18 +176,111 @@ class App {
   }
 }
 
-App.renderSocialIcons(socialIcons, "socHero");
-App.renderSocialIcons(socialIcons, "socFooter");
-App.renderSocialIcons(socialIcons, "socGIHub", [
+App.renderHTMLPart(socialIcons, "socHero", Social);
+App.renderHTMLPart(socialIcons, "socFooter", Social);
+App.renderHTMLPart(socialIcons, "socGIHub", Social, [
   "Telegram",
   "Twitter",
   "Facebook",
 ]);
-App.renderSocialIcons(socialIcons, "socFCXHub", [
+App.renderHTMLPart(socialIcons, "socFCXHub", Social, [
   "Telegram",
   "Twitter",
   "Facebook",
 ]);
+
+/////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////
+// CREATING TEAM BLOCK
+fetchData("team.json", "GET").then((data) => {
+  const teamArr = [...data];
+  App.renderHTMLPart(teamArr, "team-slider", Team);
+});
+
+class Team {
+  constructor(teamData) {
+    this.fullName = teamData.fullName;
+    this.position = teamData.position;
+    this.desc = teamData.desc;
+    this.photo = teamData.photo;
+    this.photoAlt = teamData.photoAlt;
+  }
+  createContentTemplate() {
+    const content = `
+        <div class="swiper-slide">
+          <div class="team-card">
+            <div class="team-desc">
+              <p class="name">${this.fullName}</p>
+              <p class="position">${this.position}</p>
+              <p class="team-about">${this.desc}</p>
+            </div>
+            <div class="team-img-box">
+              <img
+                src="${this.photo}"
+                alt="${this.photoAlt}"
+                class="team-img"
+              />
+            </div>
+          </div>
+        </div>`;
+    return App.createHTMLTemplate(content);
+  }
+}
+
+/////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////
+// CREATING NEWS BLOCK
+fetchData("news.json", "GET").then((data) => {
+  const newsArr = [...data];
+  App.renderHTMLPart(newsArr, "news-slider", News, false, 5);
+});
+
+class News {
+  constructor(newsData) {
+    this.title = newsData.title;
+    this.short = newsData.short;
+    this.article = newsData.article;
+    this.photo = newsData.photo;
+    this.photoAlt = newsData.photoAlt;
+    this.newsId = newsData.newsId;
+  }
+  createContentTemplate() {
+    const content = `
+    <div class="swiper-slide">
+      <div class="news-card">
+        <div class="news-img-box">
+          <img
+            src="${this.photo}"
+            alt="${this.photoAlt}"
+            class="news-img"
+          />
+        </div>
+        <div class="news-desc">
+          <p class="title-news">${this.title}</p>
+          <p class="news-short">${this.short}</p>
+          <p class="more more__news">Read more...</p>
+        </div>
+      </div>
+    </div>
+    `;
+    return App.createHTMLTemplate(content);
+  }
+}
+
+/////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////
+
+// MENU NAVIGATION
+// SMOOTH SCROLING TO ALL MENU ITEMS
+const navLinks = document.querySelector(".menu-items");
+navLinks.addEventListener("click", (e) => {
+  e.preventDefault();
+  if (e.target.classList.contains("nav__link")) {
+    const id = e.target.getAttribute("href");
+    document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+    closeOpenMenu();
+  }
+});
 
 // FOOTER SHOW / HIDDEN SOCIAL NETWORKS
 const followUsBtn = document.getElementById("footerFollowUs");
@@ -237,10 +338,10 @@ const swiperTeam = new Swiper(".mySwiperTeam", {
 const swiperNews = new Swiper(".mySwiperNews", {
   slidesPerView: 1,
   loop: true,
-  // autoplay: {
-  //   delay: 5000,
-  //   disableOnInteraction: false,
-  // },
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+  },
   // Navigation arrows
   navigation: {
     nextEl: ".swiper-button-next",
@@ -250,18 +351,3 @@ const swiperNews = new Swiper(".mySwiperNews", {
 
 /////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////
-
-/////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////
-
-// MENU NAVIGATION
-// SMOOTH SCROLING TO ALL MENU ITEMS
-const navLinks = document.querySelector(".menu-items");
-navLinks.addEventListener("click", (e) => {
-  e.preventDefault();
-  if (e.target.classList.contains("nav__link")) {
-    const id = e.target.getAttribute("href");
-    document.querySelector(id).scrollIntoView({ behavior: "smooth" });
-    closeOpenMenu();
-  }
-});
