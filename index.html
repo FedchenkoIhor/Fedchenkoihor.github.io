@@ -37,6 +37,7 @@
     />
     <!-- CSS -->
     <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/modal.css" />
     <link rel="stylesheet" href="css/header.css" />
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="stylesheet" href="css/style.css" />
@@ -96,7 +97,7 @@
               employment and decarbonization, while generating financial savings
               for businesses all over the world.
             </p>
-            <button class="btn btn__sub">SUBSCRIBE HERE</button>
+            <button class="btn btn__sub btn--show-modal">SUBSCRIBE HERE</button>
             <button class="btn btn__map">ROAD MAP</button>
 
             <div class="soc-box">
@@ -299,7 +300,7 @@
               “freelance” basis while working from any geographical location of
               their choice.
             </p>
-            <p class="more more__right">Read more...</p>
+            <p class="more more__right btn--show-modal">Read more...</p>
             <picture class="hub img-box-shape">
               <!-- <source srcset="img/BSK.webp" type="image/webp" /> -->
               <source srcset="img/Shape.jpg" type="image/jpg" />
@@ -321,7 +322,7 @@
               opportunities to secure equity in the projects in exchange for
               funding.
             </p>
-            <p class="more more__left">Read more...</p>
+            <p class="more more__left btn--show-modal">Read more...</p>
             <ul class="soc-items soc-items__hub" id="socGIHub"></ul>
           </div>
           <picture class="hub img-box" id="GI-HUB-img">
@@ -355,7 +356,7 @@
               Management Tasks (PmT).
               <span class="golden-strip"></span>
             </p>
-            <p class="more more__right">Read more...</p>
+            <p class="more more__right btn--show-modal">Read more...</p>
           </div>
 
           <div class="hub text-box">
@@ -377,7 +378,7 @@
               frictionlessly converted to the BisKoin (B$K) token which they
               can.
             </p>
-            <p class="more more__left">Read more...</p>
+            <p class="more more__left btn--show-modal">Read more...</p>
             <ul class="soc-items soc-items__hub" id="socFCXHub"></ul>
           </div>
           <picture class="hub img-box">
@@ -414,7 +415,7 @@
               function will prioritize projects in developing regions where it
               can also be used as an investment securitization strategy.
             </p>
-            <p class="more more__right">Read more...</p>
+            <p class="more more__right btn--show-modal">Read more...</p>
           </div>
         </div>
       </section>
@@ -534,7 +535,7 @@
         <div class="footer-box">
           <h4 class="footer-title" id="empty-title">EMPTY</h4>
           <ul class="footer menu-items">
-            <li class="footer menu-item active">FAQ</li>
+            <li class="footer menu-item">FAQ</li>
             <li class="footer menu-item">TERMS OF USE</li>
           </ul>
         </div>
@@ -547,13 +548,13 @@
             <div class="soc-box footer">
               <ul class="soc-items" id="socFooter"></ul>
             </div>
-            <li class="footer menu-item">SUB FOR NEWS</li>
+            <li class="footer menu-item btn--show-modal">SUB FOR NEWS</li>
           </ul>
         </div>
         <div class="footer-box">
           <h4 class="footer-title">CONTACT:</h4>
           <ul class="footer menu-items">
-            <li class="footer menu-item active">HELP CENTER</li>
+            <li class="footer menu-item">HELP CENTER</li>
             <li class="footer menu-item">BUY B$K</li>
           </ul>
         </div>
@@ -563,6 +564,18 @@
       </div>
     </footer>
     <!-- END OF FOOTER -->
+    <!-- MODAL WINDOW -->
+    <div class="modal hidden">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header">Subscribe on our newsletters</h2>
+      <form class="modal__form">
+        <label>Email Address</label>
+        <input type="email" />
+        <button class="btn btn__ok">Subscribe</button>
+      </form>
+    </div>
+    <div class="overlay hidden"></div>
+    <!-- END OF MODAL WINDOW -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
   </body>
