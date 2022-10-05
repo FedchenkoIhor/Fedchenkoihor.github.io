@@ -166,7 +166,7 @@ class App {
     arr.slice(-n).forEach((el) => {
       fragment.appendChild(new nameClass(el).createContentTemplate(template));
     });
-    const el = document.getElementById(id);
+    const el = document.querySelector(`.${id}`);
     el.appendChild(fragment);
   }
   static createHTMLTemplate(str) {
@@ -195,6 +195,22 @@ App.renderHTMLPart(socialIcons, "socFCXHub", Social, [
 fetchData("team.json", "GET").then((data) => {
   const teamArr = [...data];
   App.renderHTMLPart(teamArr, "team-slider", Team);
+  // SWIPER SLIDER (TEAM)
+  const swiperTeam = new Swiper(".mySwiperTeam", {
+    slidesPerView: 1,
+    loop: true,
+    autoHeight: true,
+    centeredSlides: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    // Navigation arrows
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
 });
 
 class Team {
@@ -233,6 +249,21 @@ class Team {
 fetchData("news.json", "GET").then((data) => {
   const newsArr = [...data];
   App.renderHTMLPart(newsArr, "news-slider", News, false, 5);
+  // SWIPER SLIDER (NEWS)
+  const swiperNews = new Swiper(".mySwiperNews", {
+    slidesPerView: 1,
+    loop: true,
+    autoHeight: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    // Navigation arrows
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
 });
 
 class News {
@@ -339,43 +370,12 @@ const swiperPartners = new Swiper(".mySwiperPartners", {
   slidesPerView: 1,
   loop: true,
   centeredSlides: true,
-  // autoplay: {
-  //   delay: 2000,
-  //   disableOnInteraction: false,
-  // },
-  freeMode: {
-    enabled: true,
-  },
-});
-
-// SWIPER SLIDER (TEAM)
-const swiperTeam = new Swiper(".mySwiperTeam", {
-  slidesPerView: 1,
-  loop: true,
-  centeredSlides: true,
-  // autoplay: {
-  //   delay: 5000,
-  //   disableOnInteraction: false,
-  // },
-  // Navigation arrows
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});
-
-// SWIPER SLIDER (NEWS)
-const swiperNews = new Swiper(".mySwiperNews", {
-  slidesPerView: 1,
-  loop: true,
   autoplay: {
-    delay: 5000,
+    delay: 2000,
     disableOnInteraction: false,
   },
-  // Navigation arrows
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+  freeMode: {
+    enabled: true,
   },
 });
 
