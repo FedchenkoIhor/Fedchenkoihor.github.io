@@ -12,10 +12,14 @@ const elemShowHidde = (elem, event) => {
 
 // GET / SEND DATA FROM / TO SERVER
 async function fetchData(url, method, data) {
+  console.log(url, method);
   return await fetch(url, {
     method: `${method}`,
+    headers: { "content-Type": "application/json" },
     body: JSON.stringify(data),
-  }).then((response) => response.json());
+  })
+    .then((response) => response.json())
+    .catch((message) => console.log(message));
 }
 
 // STICKY NAVIGATION
@@ -192,8 +196,13 @@ App.renderHTMLPart(socialIcons, "socFCXHub", Social, [
 /////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////
 // CREATING TEAM BLOCK
-fetchData("team.json", "GET").then((data) => {
+fetchData(
+  "team.json",
+  // "http://194.44.152.74:10102/api/team/members/?pageNumber=1&pageSize=5",
+  "GET"
+).then((data) => {
   const teamArr = [...data];
+  console.log(teamArr);
   App.renderHTMLPart(teamArr, "team-slider", Team);
   // SWIPER SLIDER (TEAM)
   const swiperTeam = new Swiper(".mySwiperTeam", {
@@ -215,11 +224,11 @@ fetchData("team.json", "GET").then((data) => {
 
 class Team {
   constructor(teamData) {
-    this.fullName = teamData.fullName;
-    this.position = teamData.position;
-    this.desc = teamData.desc;
-    this.photo = teamData.photo;
-    this.photoAlt = teamData.photoAlt;
+    this.fullName = teamData.title;
+    this.position = teamData.subtitle;
+    this.desc = teamData.text;
+    this.photo = teamData.imageUrl;
+    this.photoAlt = teamData.title;
   }
   createContentTemplate() {
     const content = `
@@ -329,9 +338,19 @@ const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 const btnCloseModal = document.querySelector(".btn--close-modal");
 const btnsOpenModal = document.querySelectorAll(".btn--show-modal");
+const inputModal = document.querySelectorAll(".modal-input");
 
 const openModal = function (e) {
   e.preventDefault();
+  const elAdd = document.querySelectorAll(".modal-add");
+  const elHeader = document.querySelector(".modal__header");
+  if (e.target.id === "helpCenter") {
+    elAdd.forEach((el) => (el.style.display = "block"));
+    elHeader.textContent = "Ask us any questions";
+  } else {
+    elAdd.forEach((el) => (el.style.display = "none"));
+    elHeader.textContent = "Subscribe on our newsletters";
+  }
   modal.classList.remove("hidden");
   overlay.classList.remove("hidden");
 };
@@ -339,6 +358,7 @@ const openModal = function (e) {
 const closeModal = function () {
   modal.classList.add("hidden");
   overlay.classList.add("hidden");
+  inputModal.forEach((el) => (el.value = ""));
 };
 
 btnsOpenModal.forEach((btn) => btn.addEventListener("click", openModal));

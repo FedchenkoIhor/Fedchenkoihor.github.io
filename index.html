@@ -554,7 +554,9 @@
         <div class="footer-box">
           <h4 class="footer-title">CONTACT:</h4>
           <ul class="footer menu-items">
-            <li class="footer menu-item">HELP CENTER</li>
+            <li class="footer menu-item btn--show-modal" id="helpCenter">
+              HELP CENTER
+            </li>
             <li class="footer menu-item">BUY B$K</li>
           </ul>
         </div>
@@ -570,7 +572,11 @@
       <h2 class="modal__header">Subscribe on our newsletters</h2>
       <form class="modal__form">
         <label>Email Address</label>
-        <input type="email" />
+        <input type="email" required="true" class="modal-input" />
+        <label class="modal-add">Subject</label>
+        <input type="text" required="true" class="modal-add modal-input" />
+        <label class="modal-add">Question</label>
+        <input type="text" required="true" class="modal-add modal-input" />
         <button class="btn btn__ok">Subscribe</button>
       </form>
     </div>
