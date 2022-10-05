@@ -33,6 +33,10 @@
   .news-card {
     width: 90%;
   }
+
+  .modal__header {
+    font-size: 2.4rem;
+  }
 }
 
 /* 
@@ -146,6 +150,14 @@
   .news-logo-img {
     width: 10rem;
     height: 10rem;
+  }
+
+  .modal__form {
+    grid-template-columns: 1fr;
+  }
+
+  .modal__form button {
+    grid-column: 1;
   }
 }
 
@@ -371,5 +383,9 @@
 
   .footer-box {
     width: 75%;
+  }
+
+  .modal__header {
+    font-size: 2rem;
   }
 }
