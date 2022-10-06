@@ -388,4 +388,43 @@
   .modal__header {
     font-size: 2rem;
   }
+
+  /* FAQ PAGE */
+  .container-faq {
+    padding: 0;
+  }
+
+  .title-box.FAQ {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .title-fqa {
+    margin-left: 0;
+    margin-bottom: 2.4rem;
+    letter-spacing: 0.4rem;
+  }
+
+  .btn__back {
+    margin-bottom: 2.4rem;
+  }
+
+  .faq-card {
+    margin: 2rem 0;
+  }
+
+  .open-question {
+    margin: 0 1.6rem;
+  }
+
+  .faq-question {
+    font-size: 2.4em;
+  }
+
+  .faq-answer {
+    margin-left: 1.4rem;
+    font-size: 1.6rem;
+  }
 }
