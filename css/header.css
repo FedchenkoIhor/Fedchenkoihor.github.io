@@ -8,32 +8,6 @@ header {
   position: relative;
 }
 
-.title-box {
-  margin-top: 3.2rem;
-  padding-left: 5.1rem;
-}
-
-.logo-box {
-  display: inline-block;
-  width: 7.2rem;
-  height: 7.2rem;
-  margin: 3.2rem;
-}
-
-.logo-img {
-  width: 100%;
-}
-
-h1 {
-  display: inline-block;
-  font-size: 3.2rem;
-  letter-spacing: 1.2rem;
-  color: var(--main-dark-color);
-  text-transform: uppercase;
-  margin-left: 8.2rem;
-  line-height: 1.3;
-}
-
 .hero-box {
   display: flex;
   gap: 6.4rem;
@@ -178,12 +152,6 @@ nav {
   align-items: center;
 }
 
-.bi {
-  width: 3rem;
-  height: 3rem;
-  color: var(--primary-color);
-  transition: all 0.3s;
-}
 
 .bi:hover {
   transform: scale(1.1);

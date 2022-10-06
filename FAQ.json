@@ -1,0 +1,37 @@
+[
+  {
+    "question": "Ecosystem Dual Tokenization. What is it?",
+    "answer": "The DBS Ecosystem is a Two Token System: BisKoin (B$K) and TasKoin (T$K). The BisKoin (B$K) is first and foremost a Utility Token; it is only used within the DBS Ecosystem. It is the fuel of the DBS Ecosystem and the currency used by participants to pay for DBS Ecosystem services such as subscription for membership to the ecosystem to use its application such as the GS Hub Application. It is also an optional means for ecosystem members to transact value between each other, but only limited to transactions within the DBS Ecosystem. The BisKoin (B$K) token is a digital currency. It will be traded (bought and sold) on public cryptocurrency exchanges. This provides ecosystem members the freedom to exit and enter the ecosystem as they wish. The TasKoin (T$K) is a stable coin which will be used as a conversion mechanism from fiat currency to digital currency in geographical location where Central Bank Digital Currencies to not exists or Central Bank Authorities have a command-and-control approach to foreign currency exchange. It is also used to help ecosystem members in hyperinflation regions to convert their hard-earned fiat money into digital currencies or any other currency of choice through the BisKoin (B$K). The TasKoin (T$K) will have a one-to-one exchange rate with the local fiat currencies in each of the geographical locations. It will provide a frictionless exchange between the fiat currencies and the Biskoin (B$K), based on the real time BisKoin(B$K) to US Dollar trading price on the public cryptocurrency market.",
+    "faqId": "faq-1"
+  },
+  {
+    "question": "DBS Ecosystem Subscriptions.",
+    "answer": "All participants in the DBS Ecosystem will be required to have current and up-to-date subscriptions, which attract a small fee in BisKoins (B$K). These subscriptions must be issued on the Registration step. If the user doesn't have the possibility to pay for the Subscription, He/She can get a loan from the DBS Ecosystem. Here the user would interact with just the DBS Ecosystem interface to manage all the needed subscription services, instead of maintaining relations with multiple applications. It would also allow the consumer to combine several subscriptions freely to a personalized bundle through the one shared aggregator for higher convenience.",
+    "faqId": "faq-2"
+  },
+  {
+    "question": "GS Hub. Bidding Process.",
+    "answer": "SPO issues a DTO on the GS Hub application for specific work to be tendered for global bidding by qualified and experienced SMEs who meet the minimum requirements specified by the SPO in DTO data. Once the DTO tender has been released by the SPO, the SPO Holding Account Minimum Balance is transferred from the SPO Holding Account to the DBS Ecosystem Smart Contract Escrow Account. SME puts an Expression of Interest (EoI) for the available DTO displayed on the GS Hub application. SPO selects a number (NBS) of the top primary bidders or SMEs that put in an expression of interest for the DTO, and they receive notifications to send their proposals. SPO learns the received proposals and announces the winning (DTO) bidder. The DTO Smart Contract or Service Level Agreement (SLA) is signed between SPO and DTO winning.",
+    "faqId": "faq-3"
+  },
+  {
+    "question": "GS Hub. DTO Completion and Delivery.",
+    "answer": "SME must finish and deliver the DTO to SPO’s specified standards and acceptance criteria. SPO accepts the completed (DTO) work and signs off the completed work. DTO Value is transferred from the SPO’s DBS Ecosystem Escrow Holding Account to the DTO winning bidder or SME’s Holding Account. The DTO Smart Contract Execution is closed and archived. The DTO project is updated on the SME’s DBS Ecosystem digital CV.",
+    "faqId": "faq-4"
+  },
+  {
+    "question": "GS Hub. Adjudication & Arbitration processes.",
+    "answer": "If SPO rejects or disputes the final DTO solution by the SME and the two fail to reach a consensus, then SPO can start an Adjudication/Arbitration process. The Reviewer/DRS is selected by the smart contracts, and he/she remains anonymous and their identities are not visible to the SME or SPO. SPO and SME get reviews/resolutions. If there is still no resolution after the Adjudication process, they start the Arbitration process. If there is still no resolution after the Arbitration process, then the two parties in dispute can take the matter further for litigation outside the DBS Ecosystem.",
+    "faqId": "faq-5"
+  },
+  {
+    "question": "GI Hub. Main Processes. How does it work?",
+    "answer": "Will be provided soon…",
+    "faqId": "faq-6"
+  },
+  {
+    "question": "Global Decarbonisation & Green Certificates Exchange Hub (GCx Hub) Application.",
+    "answer": "The DBS Ecosystem participants can receive free BisKoins (B$K) through Carbon Emission (tCO2e) Mining; a process where a participant organisation or individual is issued BisKoins (B$K) in exchange for reducing carbon emissions or equivalent in clean energy generation, in exchange for green certificates. This is analogous to the generation of Bitcoins by Bitcoin miners. The participant registers their carbon reducing project or renewable energy generation project with the DBS Ecosystem and provide the relevant project details. The projects that do not produce clean power generation but directly reduce carbon emissions are analysed by equating the annual tCO2 (eq) reduction to equivalent PV Solar MWh produced for that project, e.g., 1.4MWh of PV Solar Energy = 1000tCO2(eq) emissions reduction. The participants download an Algorand or alternative compatible wallet to create a receiving address that acts like a bank account (called a “Carbon Emissions Mining Account”). The monitoring system will send generation equivalent data to the DBS Ecosystem, and Biskoins (B$K) will in turn be sent to the project owner participant at a rate equal to the Levelised Cost of Energy (LCOE) for that project. The project owner is free to exchange or spend the BisKoins (B$K) as they wish after holding them for a minimum of twelve months and may receive ongoing BisKoin (B$K) grants each year over several years until the project reaches breakeven point (or Net Present Value (NPV) = 0). Carbon Emissions Mining provides free economic incentives to encourage capital expenditure on clean energy projects and carbon emissions abatement projects. This function will prioritise projects in developing regions where it can also be used as an investment securitization strategy.",
+    "faqId": "faq-7"
+  }
+]

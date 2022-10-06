@@ -1,5 +1,7 @@
 "use strict";
 
+import { fetchData, App } from "./service.js";
+
 // SET CURRENT YEAR IN FOOTER
 const yearEl = document.querySelector(".year");
 const currentYear = new Date().getFullYear();
@@ -9,18 +11,6 @@ yearEl.textContent = currentYear;
 const elemShowHidde = (elem, event) => {
   elem.style.display = event;
 };
-
-// GET / SEND DATA FROM / TO SERVER
-async function fetchData(url, method, data) {
-  console.log(url, method);
-  return await fetch(url, {
-    method: `${method}`,
-    headers: { "content-Type": "application/json" },
-    body: JSON.stringify(data),
-  })
-    .then((response) => response.json())
-    .catch((message) => console.log(message));
-}
 
 // STICKY NAVIGATION
 const sectionHeroEl = document.querySelector("header");
@@ -155,28 +145,6 @@ class Social {
     </a>
   </li> `;
     return App.createHTMLTemplate(content);
-  }
-}
-
-class App {
-  static renderHTMLPart(arrData, id, nameClass, template = false, n) {
-    const fragment = document.createDocumentFragment();
-    let arr = [];
-    template
-      ? (arr = socialIcons.filter(function (e) {
-          return this.indexOf(e.name) >= 0;
-        }, template))
-      : (arr = [...arrData]);
-    arr.slice(-n).forEach((el) => {
-      fragment.appendChild(new nameClass(el).createContentTemplate(template));
-    });
-    const el = document.querySelector(`.${id}`);
-    el.appendChild(fragment);
-  }
-  static createHTMLTemplate(str) {
-    const template = document.createElement("template");
-    template.innerHTML = str;
-    return template.content;
   }
 }
 
@@ -338,6 +306,8 @@ const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 const btnCloseModal = document.querySelector(".btn--close-modal");
 const btnsOpenModal = document.querySelectorAll(".btn--show-modal");
+const btnSubscribeModal = document.querySelector(".btn__ok");
+const formModal = document.querySelector(".modal__form");
 const inputModal = document.querySelectorAll(".modal-input");
 
 const openModal = function (e) {
@@ -371,6 +341,16 @@ document.addEventListener("keydown", function (e) {
     closeModal();
   }
 });
+
+btnSubscribeModal.addEventListener("submit", function (e) {
+  e.preventDefault();
+  console.log("test");
+  console.log(getFormData(formModal));
+});
+
+function getFormData(form) {
+  return new FormData(form);
+}
 
 /////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////
