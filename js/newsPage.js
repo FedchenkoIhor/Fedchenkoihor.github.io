@@ -42,13 +42,29 @@ document.querySelector(".btn__back").addEventListener("click", function (e) {
 fetchData("news.json", "GET").then((data) => {
   const newsArr = [...data];
   App.renderHTMLPart(newsArr, "news-slider", News);
+
+  // add event on "Read more..."
   const btnReadMore = document.querySelectorAll(".more__news");
   btnReadMore.forEach((el) => el.addEventListener("click", openCloseArticle));
+
+  // active slide with selected news
   const activeSlide = new URLSearchParams(location.search).get("slide");
   if (activeSlide) {
     swiperNews.activeIndex = Number.parseInt(activeSlide) - 1;
-    openCloseArticle();
+    swiperNews.update();
+    // open article of active news
+    const newsCard = swiperNews.slides[swiperNews.activeIndex].children;
+    for (const child of newsCard[0].children) {
+      if (child.classList.contains("news-desc")) {
+        for (const childInner of child.children) {
+          if (childInner.classList.contains("more__news")) {
+            childInner.children[0].click();
+          }
+        }
+      }
+    }
   }
+
   swiperNews.update();
 });
 
