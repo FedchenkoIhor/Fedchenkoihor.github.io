@@ -138,10 +138,11 @@
 
 .more.more__news {
   font-size: 1.8rem;
+  color: var(--primary-color);
 }
 
 .more.more__news:hover {
-  color: var(--primary-color);
+  color: var(--main-color);
 }
 
 .team-img-box,
