@@ -1,0 +1,207 @@
+/* 
+    *************************************
+              TEAM / NEWS SECTION 
+    *************************************
+*/
+.team-section,
+.news-section {
+  padding: var(--section-padding);
+}
+
+/* figures */
+/* semicircle */
+.semicircles {
+  position: absolute;
+  top: 15rem;
+  left: 8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  z-index: 5;
+}
+
+.semicircles.news-block {
+  transform: rotate(180deg);
+  left: auto;
+  right: 8rem;
+}
+
+.semicircle {
+  width: 10rem;
+  height: 5rem;
+  background-color: var(--primary-color);
+  border-bottom-left-radius: 5.5rem;
+  border-bottom-right-radius: 5.5rem;
+  border-top: 0;
+}
+
+/* triangles */
+.triangles {
+  position: absolute;
+  bottom: 1rem;
+  left: 25rem;
+  display: flex;
+  gap: 3.2rem;
+  z-index: 5;
+}
+
+.triangles.news-block {
+  transform: rotate(180deg);
+  left: auto;
+  right: 25rem;
+  bottom: 4rem;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 3rem solid transparent;
+  border-right: 3rem solid transparent;
+  border-bottom: 5rem solid var(--primary-color);
+}
+
+/* strips */
+.strips {
+  position: absolute;
+  right: 3rem;
+  bottom: 7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  z-index: 5;
+}
+
+.strips.news-block {
+  transform: rotate(90deg);
+  right: auto;
+  left: 20rem;
+  bottom: 1rem;
+}
+
+.strip {
+  width: 16rem;
+  height: 1.5rem;
+  background-color: var(--primary-color);
+}
+
+.rarr {
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.rarr:hover {
+  color: var(--main-color);
+}
+
+.team-card,
+.news-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.4rem;
+  width: 80%;
+  margin: 3.2rem auto;
+  padding: 2.4rem 4.4rem 4.4rem 4.4rem;
+  box-shadow: 0 1.2rem 3rem rgba(0, 0, 0, 0.15);
+}
+
+.team-desc,
+.news-desc {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  width: 45%;
+}
+
+.name {
+  font-size: 4.4rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.position,
+.title-news {
+  font-size: 2.4rem;
+  text-transform: uppercase;
+}
+
+.title-news {
+  font-weight: 500;
+}
+
+.team-about {
+  font-size: 1.6rem;
+}
+
+.article-news {
+  display: none;
+}
+
+.more.more__news {
+  font-size: 1.8rem;
+}
+
+.more.more__news:hover {
+  color: var(--primary-color);
+}
+
+.team-img-box,
+.news-img-box {
+  width: 45%;
+}
+
+.team-img,
+.news-img {
+  width: 100%;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--main-color);
+}
+
+.breaks {
+  font-size: 2.4rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-left: 35rem;
+}
+
+.news-logo-img,
+.newsAll-logo-img {
+  position: absolute;
+  top: 8rem;
+  left: 8rem;
+  width: 14rem;
+  height: 14rem;
+  z-index: 5;
+}
+
+.newsAll-logo-img {
+  top: 20rem;
+  left: 2rem;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: 0;
+}
+
+.swiper-pagination-bullet {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: var(--main-color);
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--swiper-pagination-color, var(--primary-color));
+}
+
+.visible {
+  display: block;
+}

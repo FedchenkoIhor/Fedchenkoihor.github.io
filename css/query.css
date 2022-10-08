@@ -147,7 +147,8 @@
     width: 80%;
   }
 
-  .news-logo-img {
+  .news-logo-img,
+  .newsAll-logo-img {
     width: 10rem;
     height: 10rem;
   }

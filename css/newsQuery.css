@@ -1,0 +1,23 @@
+/* 
+    *************************************
+        BELOW 928px Tablet
+    *************************************
+*/
+
+@media (max-width: 58em) {
+  .news-card {
+    flex-direction: column;
+  }
+}
+
+/* 
+*************************************
+BELOW 544px Phone
+*************************************
+*/
+
+@media (max-width: 34em) {
+  .newsAll-logo-img {
+    top: 25rem;
+  }
+}

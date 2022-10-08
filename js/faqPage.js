@@ -1,12 +1,14 @@
 "use strict";
 
-import { fetchData, App } from "./service.js";
+import { fetchData, App, shortHeader, setCurrentYear } from "./service.js";
+
 /////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////
 // SET CURRENT YEAR IN FOOTER
-const yearEl = document.querySelector(".year");
-const currentYear = new Date().getFullYear();
-yearEl.textContent = currentYear;
+setCurrentYear();
+
+// CREATE HEADER
+customElements.define("short-header", shortHeader);
 
 // CREATE CONTENT FAQ
 fetchData("FAQ.json", "GET").then((data) => {

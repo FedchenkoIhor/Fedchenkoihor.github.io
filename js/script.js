@@ -1,14 +1,12 @@
 "use strict";
 
-import { fetchData, App } from "./service.js";
+import { fetchData, App, setCurrentYear } from "./service.js";
 import { Team } from "./team.js";
 import { News } from "./news.js";
 import { socialIcons, Social } from "./social.js";
 
 // SET CURRENT YEAR IN FOOTER
-const yearEl = document.querySelector(".year");
-const currentYear = new Date().getFullYear();
-yearEl.textContent = currentYear;
+setCurrentYear();
 
 // FUNCTION SHOW / HIDE ELEMENT
 const elemShowHidde = (elem, event) => {

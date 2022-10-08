@@ -11,7 +11,7 @@ export class News {
   createContentTemplate() {
     const content = `
     <div class="swiper-slide">
-      <div class="news-card">
+      <div class="news-card" id="${this.newsId}">
         <div class="news-img-box">
           <img
             src="${this.photo}"
@@ -22,8 +22,13 @@ export class News {
         <div class="news-desc">
           <p class="title-news">${this.title}</p>
           <p class="news-short">${this.short}</p>
-          <p class="more more__news">Read more...</p>
+          <p class="more more__news"><a href="news.html?slide=${
+            this.newsId
+          }" data-slider="${Number.parseInt(
+      this.newsId
+    )}">Read more...</a></p>           
         </div>
+        <p class="article-news">${this.article}</p>
       </div>
     </div>
     `;
