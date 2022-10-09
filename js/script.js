@@ -1,9 +1,12 @@
 "use strict";
 
-import { fetchData, App, setCurrentYear } from "./service.js";
+import { fetchData, App, setCurrentYear, mainFooter } from "./service.js";
 import { Team } from "./team.js";
 import { News } from "./news.js";
 import { socialIcons, Social } from "./social.js";
+
+// CREATE FOOTER
+customElements.define("main-footer", mainFooter);
 
 // SET CURRENT YEAR IN FOOTER
 setCurrentYear();
@@ -147,11 +150,13 @@ fetchData("news.json", "GET").then((data) => {
 // SMOOTH SCROLING TO ALL MENU ITEMS
 const navLinks = document.querySelector(".menu-items");
 navLinks.addEventListener("click", (e) => {
-  e.preventDefault();
-  if (e.target.classList.contains("nav__link")) {
-    const id = e.target.getAttribute("href");
-    document.querySelector(id).scrollIntoView({ behavior: "smooth" });
-    closeOpenMenu();
+  if (!e.target.classList.contains("nav__token")) {
+    e.preventDefault();
+    if (e.target.classList.contains("nav__link")) {
+      const id = e.target.getAttribute("href");
+      document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+      closeOpenMenu();
+    }
   }
 });
 
