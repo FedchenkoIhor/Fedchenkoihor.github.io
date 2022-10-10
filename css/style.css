@@ -1,41 +1,11 @@
 /* 
     *************************************
-              HEADER 
-    *************************************
-*/
-
-.btn__sub,
-.btn__map {
-  border: 3px solid var(--primary-color);
-  width: 30rem;
-}
-
-/* 
-    *************************************
               FEATURE SECTION 
     *************************************
 */
 
-.feature-section,
-.partners-section {
-  position: relative;
-  background-image: url(../img/goldenwave.png);
-  background-size: cover;
-  background-position: top;
-  background-repeat: no-repeat;
-}
-
 .vawes {
-  position: relative;
-  overflow: hidden;
   padding: 14.4rem 0 12.8rem 0;
-}
-
-.grid-vawes-img {
-  position: absolute;
-  bottom: 0;
-  width: 100vw;
-  z-index: -2;
 }
 
 .apps {

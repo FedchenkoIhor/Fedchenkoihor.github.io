@@ -108,6 +108,14 @@ nav {
   font-size: 1.8rem;
 }
 
+.btn__sub,
+.btn__map,
+.btn__join,
+.btn__buy {
+  border: 3px solid var(--primary-color);
+  width: 30rem;
+}
+
 .earth-img {
   position: absolute;
   top: 3.2rem;
@@ -152,7 +160,34 @@ nav {
   align-items: center;
 }
 
-
 .bi:hover {
   transform: scale(1.1);
+}
+
+/* 
+    *************************************
+              APP SECTION 
+    *************************************
+*/
+
+.feature-section,
+.partners-section,
+.app-section {
+  position: relative;
+  background-image: url(../img/goldenwave.png);
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+}
+
+.vawes {
+  position: relative;
+  overflow: hidden;
+}
+
+.grid-vawes-img {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  z-index: -2;
 }

@@ -1,9 +1,13 @@
 "use strict";
 
-import { fetchData, App, setCurrentYear, mainFooter } from "./service.js";
+import { fetchData, App, setCurrentYear } from "./service.js";
+import { mainHeader, mainFooter } from "./HTMLBlocks.js";
 import { Team } from "./team.js";
 import { News } from "./news.js";
 import { socialIcons, Social } from "./social.js";
+
+// CREATE HEADER
+customElements.define("main-header", mainHeader);
 
 // CREATE FOOTER
 customElements.define("main-footer", mainFooter);

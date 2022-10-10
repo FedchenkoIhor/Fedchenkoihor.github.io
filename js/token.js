@@ -1,7 +1,39 @@
 "use strict";
 
-import { fetchData, App, setCurrentYear, mainFooter } from "./service.js";
+import { fetchData, App, setCurrentYear } from "./service.js";
+import { mainHeader, mainFooter } from "./HTMLBlocks.js";
 import { socialIcons, Social } from "./social.js";
+
+// CREATE HEADER
+customElements.define("main-header", mainHeader);
+const mainMenu = document.querySelector(".menu-items");
+const descrHeader = document.querySelector(".descr");
+const btnJoin = document.querySelector(".btn__sub");
+const btnBuy = document.querySelector(".btn__map");
+mainMenu.innerHTML = `
+    <li class="menu-item active">
+    <a class="nav__link" href="index.html">Home</a>
+    </li>
+    <li class="menu-item">Documents</li>
+    <li class="menu-item">Team</li>
+    <li class="menu-item">Contacts</li>
+    <li class="menu-item">Staking</li>
+`;
+
+descrHeader.innerHTML = `
+Be a part of the first gobally inclusive, democratic, and
+competitive business Decentralized Finance (DeFi) platform. It was
+created to enable worldwide environmental sustainability and
+equitable wealth distribution by facilitating investment capital,
+employment and decarbonization, while generating financial savings
+for businesses all over the world.`;
+
+btnJoin.innerHTML = "JOIN US";
+btnJoin.classList.add("btn__join");
+btnJoin.classList.remove("btn__sub");
+btnBuy.innerHTML = "BUY TOKEN";
+btnBuy.classList.add("btn__buy");
+btnBuy.classList.remove("btn__map");
 
 // CREATE FOOTER
 customElements.define("main-footer", mainFooter);
