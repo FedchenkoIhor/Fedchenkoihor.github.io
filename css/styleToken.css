@@ -132,6 +132,12 @@
   width: 100%;
 }
 
+.golden-p {
+  color: var(--primary-color);
+  font-weight: 500;
+  margin: 2rem 0;
+}
+
 .square-box {
   display: flex;
   justify-content: space-around;

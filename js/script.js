@@ -6,7 +6,8 @@ import { Team, News, socialIcons, Social } from "./class.js";
 
 // CREATE HEADER
 customElements.define("main-header", mainHeader);
-
+const btnMap = document.querySelector(".btn__map");
+btnMap.innerHTML = "<a href='roadMap.html'>ROAD MAP</a>";
 // CREATE FOOTER
 customElements.define("main-footer", mainFooter);
 
