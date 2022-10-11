@@ -2,9 +2,7 @@
 
 import { fetchData, App, setCurrentYear } from "./service.js";
 import { mainHeader, mainFooter } from "./HTMLBlocks.js";
-import { Team } from "./team.js";
-import { News } from "./news.js";
-import { socialIcons, Social } from "./social.js";
+import { Team, News, socialIcons, Social } from "./class.js";
 
 // CREATE HEADER
 customElements.define("main-header", mainHeader);

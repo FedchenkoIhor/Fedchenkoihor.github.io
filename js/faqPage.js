@@ -1,6 +1,6 @@
 "use strict";
 
-import { fetchData, App, shortHeader, setCurrentYear } from "./service.js";
+import { fetchData, App, setCurrentYear } from "./service.js";
 import { shortHeader } from "./HTMLBlocks.js";
 
 /////////////////////////////////////////////////////////////
