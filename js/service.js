@@ -7,10 +7,11 @@ export function setCurrentYear() {
 
 // GET / SEND DATA FROM / TO SERVER
 export async function fetchData(url, method, data) {
-  console.log(url, method);
+  console.log(url, method, data);
+  console.log(JSON.stringify(data));
   return await fetch(url, {
     method: `${method}`,
-    mode: "no-cors",
+    mode: "cors",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
   })

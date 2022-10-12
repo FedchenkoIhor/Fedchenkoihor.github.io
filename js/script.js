@@ -1,15 +1,20 @@
 "use strict";
 
 import { fetchData, App, setCurrentYear } from "./service.js";
-import { mainHeader, mainFooter } from "./HTMLBlocks.js";
+import { mainHeader, mainFooter, modalWindow } from "./HTMLBlocks.js";
 import { Team, News, socialIcons, Social } from "./class.js";
 
 // CREATE HEADER
 customElements.define("main-header", mainHeader);
 const btnMap = document.querySelector(".btn__map");
 btnMap.innerHTML = "<a href='roadMap.html'>ROAD MAP</a>";
+
 // CREATE FOOTER
 customElements.define("main-footer", mainFooter);
+
+// CREATE MODAL WINDOW
+customElements.define("modal-window", modalWindow);
+modalWindow.initModal();
 
 // SET CURRENT YEAR IN FOOTER
 setCurrentYear();
@@ -171,59 +176,6 @@ followUsBtn.addEventListener("click", () => {
     ? elemShowHidde(socBox, "block")
     : elemShowHidde(socBox, "none");
 });
-
-/////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////
-// MODAL WINDOW
-const modal = document.querySelector(".modal");
-const overlay = document.querySelector(".overlay");
-const btnCloseModal = document.querySelector(".btn--close-modal");
-const btnsOpenModal = document.querySelectorAll(".btn--show-modal");
-const btnSubscribeModal = document.querySelector(".btn__ok");
-const formModal = document.querySelector(".modal__form");
-const inputModal = document.querySelectorAll(".modal-input");
-
-const openModal = function (e) {
-  e.preventDefault();
-  const elAdd = document.querySelectorAll(".modal-add");
-  const elHeader = document.querySelector(".modal__header");
-  if (e.target.id === "helpCenter") {
-    elAdd.forEach((el) => (el.style.display = "block"));
-    elHeader.textContent = "Ask us any questions";
-  } else {
-    elAdd.forEach((el) => (el.style.display = "none"));
-    elHeader.textContent = "Subscribe on our newsletters";
-  }
-  modal.classList.remove("hidden");
-  overlay.classList.remove("hidden");
-};
-
-const closeModal = function () {
-  modal.classList.add("hidden");
-  overlay.classList.add("hidden");
-  inputModal.forEach((el) => (el.value = ""));
-};
-
-btnsOpenModal.forEach((btn) => btn.addEventListener("click", openModal));
-
-btnCloseModal.addEventListener("click", closeModal);
-overlay.addEventListener("click", closeModal);
-
-document.addEventListener("keydown", function (e) {
-  if (e.key === "Escape" && !modal.classList.contains("hidden")) {
-    closeModal();
-  }
-});
-
-btnSubscribeModal.addEventListener("submit", function (e) {
-  e.preventDefault();
-  console.log("test");
-  console.log(getFormData(formModal));
-});
-
-function getFormData(form) {
-  return new FormData(form);
-}
 
 /////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////

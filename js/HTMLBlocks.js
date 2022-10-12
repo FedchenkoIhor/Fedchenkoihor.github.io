@@ -1,3 +1,7 @@
+"use strict";
+
+import { fetchData } from "./service.js";
+
 // CLASS HEADER
 export class mainHeader extends HTMLElement {
   connectedCallback() {
@@ -140,6 +144,83 @@ export class shortHeader extends HTMLElement {
         <h1 class="title-fqa">DBS Ecosystem &mdash; FAQ</h1>
       </div>
       <a href="" class="btn btn__back">&larr; BACK</a>
+    `;
+  }
+}
+
+// MODAL WINDOW
+
+export class modalWindow extends HTMLElement {
+  static initModal() {
+    const modal = document.querySelector(".modal");
+    const overlay = document.querySelector(".overlay");
+    const btnCloseModal = document.querySelector(".btn--close-modal");
+    const btnsOpenModal = document.querySelectorAll(".btn--show-modal");
+    const formModal = document.getElementById("subscribeForm");
+    const inputModal = document.querySelectorAll(".modal-input");
+
+    const openModal = function (e) {
+      e.preventDefault();
+      const elAdd = document.querySelectorAll(".modal-add");
+      const elHeader = document.querySelector(".modal__header");
+      if (e.target.id === "helpCenter") {
+        elAdd.forEach((el) => (el.style.display = "block"));
+        elHeader.textContent = "Ask us any questions";
+      } else {
+        elAdd.forEach((el) => (el.style.display = "none"));
+        elHeader.textContent = "Subscribe on our newsletters";
+      }
+
+      modal.classList.remove("hidden");
+      overlay.classList.remove("hidden");
+    };
+
+    const closeModal = function () {
+      modal.classList.add("hidden");
+      overlay.classList.add("hidden");
+      inputModal.forEach((el) => (el.value = ""));
+    };
+
+    btnsOpenModal.forEach((btn) => btn.addEventListener("click", openModal));
+
+    btnCloseModal.addEventListener("click", closeModal);
+
+    overlay.addEventListener("click", closeModal);
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+        closeModal();
+      }
+    });
+
+    formModal.onsubmit = (e) => {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      fetchData(
+        "https://jsonplaceholder.typicode.com/posts",
+        "POST",
+        Object.fromEntries(formData)
+      );
+      closeModal();
+    };
+  }
+
+  connectedCallback() {
+    this.innerHTML = `
+    <div class="modal hidden">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header">Subscribe on our newsletters</h2>
+      <form id="subscribeForm" class="modal__form">
+        <label>Email Address</label>
+        <input type="email" required="true" name="email" class="modal-input" />
+        <label class="modal-add">Subject</label>
+        <input type="text" name="subject" class="modal-add modal-input" />
+        <label class="modal-add">Question</label>
+        <input type="text" name="question" class="modal-add modal-input" />
+        <button class="btn btn__ok">Subscribe</button>
+      </form>
+    </div>
+    <div class="overlay hidden"></div>
     `;
   }
 }

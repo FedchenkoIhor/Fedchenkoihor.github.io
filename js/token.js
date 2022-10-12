@@ -1,7 +1,7 @@
 "use strict";
 
 import { fetchData, App, setCurrentYear } from "./service.js";
-import { mainHeader, mainFooter } from "./HTMLBlocks.js";
+import { mainHeader, mainFooter, modalWindow } from "./HTMLBlocks.js";
 import { socialIcons, Social } from "./class.js";
 
 // CREATE HEADER
@@ -37,6 +37,10 @@ btnBuy.classList.remove("btn__map");
 
 // CREATE FOOTER
 customElements.define("main-footer", mainFooter);
+
+// CREATE MODAL WINDOW
+customElements.define("modal-window", modalWindow);
+modalWindow.initModal();
 
 // SET CURRENT YEAR IN FOOTER
 setCurrentYear();
