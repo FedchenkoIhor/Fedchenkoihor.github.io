@@ -15,7 +15,7 @@ mainMenu.innerHTML = `
     <a class="nav__link" href="index.html">Home</a>
     </li>
     <li class="menu-item">Documents</li>
-    <li class="menu-item">Team</li>
+    <li class="menu-item"><a href="index.html#section--3">Team</a></li>
     <li class="menu-item">Contacts</li>
     <li class="menu-item">Staking</li>
 `;
