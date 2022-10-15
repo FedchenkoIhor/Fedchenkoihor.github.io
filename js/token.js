@@ -16,8 +16,7 @@ mainMenu.innerHTML = `
     </li>
     <li class="menu-item">Documents</li>
     <li class="menu-item"><a href="index.html#section--3">Team</a></li>
-    <li class="menu-item">Contacts</li>
-    <li class="menu-item">Staking</li>
+    <!-- <li class="menu-item">Staking</li> -->
 `;
 
 descrHeader.innerHTML = `
@@ -28,10 +27,10 @@ equitable wealth distribution by facilitating investment capital,
 employment and decarbonization, while generating financial savings
 for businesses all over the world.`;
 
-btnJoin.innerHTML = "JOIN US";
-btnJoin.classList.add("btn__join");
-btnJoin.classList.remove("btn__sub");
-btnBuy.innerHTML = "BUY TOKEN";
+// btnJoin.innerHTML = "JOIN US";
+// btnJoin.classList.add("btn__join");
+// btnJoin.classList.remove("btn__sub");
+btnBuy.innerHTML = "BUY B$K";
 btnBuy.classList.add("btn__buy");
 btnBuy.classList.remove("btn__map");
 
