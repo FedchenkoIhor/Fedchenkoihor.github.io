@@ -42,10 +42,14 @@ document.querySelector(".btn__back").addEventListener("click", function (e) {
 // CREATING NEWS BLOCK
 fetchData("news.json", "GET").then((data) => {
   const newsArr = [...data];
-  App.renderHTMLPart(newsArr, "news-slider", News);
+  const newsArrIndexed = newsArr.map((el, index) => {
+    el.newsId = index + 1 + "-" + el.newsId;
+    return el;
+  });
+  App.renderHTMLPart(newsArrIndexed, "news-slider", News);
 
   // add event on "Read more..."
-  const btnReadMore = document.querySelectorAll(".more__news");
+  const btnReadMore = document.querySelectorAll(".more__news--link");
   btnReadMore.forEach((el) => el.addEventListener("click", openCloseArticle));
 
   // active slide with selected news
@@ -55,15 +59,7 @@ fetchData("news.json", "GET").then((data) => {
     swiperNews.update();
     // open article of active news
     const newsCard = swiperNews.slides[swiperNews.activeIndex].children;
-    for (const child of newsCard[0].children) {
-      if (child.classList.contains("news-desc")) {
-        for (const childInner of child.children) {
-          if (childInner.classList.contains("more__news")) {
-            childInner.children[0].click();
-          }
-        }
-      }
-    }
+    newsCard[0].querySelector(".more__news--link").click();
   }
 
   swiperNews.update();
@@ -71,17 +67,11 @@ fetchData("news.json", "GET").then((data) => {
 
 function openCloseArticle(e) {
   e.preventDefault();
-  let parentLink = e.target.parentElement;
-  const parentHeader = parentLink.parentElement;
-  const article = parentHeader.nextElementSibling;
-  if (article) {
-    if (article.classList.contains("visible")) {
-      article.classList.remove("visible");
-      e.target.textContent = "Read more...";
-    } else {
-      article.classList.add("visible");
-      e.target.textContent = "Read less...";
-    }
-    swiperNews.update();
-  }
+  const article = e.target.closest(".news-desc").nextElementSibling;
+  if (!article) return;
+  article.classList.toggle("visible");
+  e.target.textContent === "Read more..."
+    ? (e.target.textContent = "Read less...")
+    : (e.target.textContent = "Read more...");
+  swiperNews.update();
 }

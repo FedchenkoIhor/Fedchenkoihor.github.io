@@ -108,7 +108,6 @@ fetchData(
   "GET"
 ).then((data) => {
   const teamArr = [...data];
-  console.log(teamArr);
   App.renderHTMLPart(teamArr, "team-slider", Team);
   // SWIPER SLIDER (TEAM)
   const swiperTeam = new Swiper(".mySwiperTeam", {
@@ -124,6 +123,25 @@ fetchData(
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
+    },
+  });
+});
+
+// CREATING PARTNERS BLOCK
+fetchData("partners.json", "GET").then((data) => {
+  const partnersArr = [...data];
+  App.renderHTMLPart(partnersArr, "partners-slider", Partners);
+  // SWIPER SLIDER (PARTNERS)
+  const swiperPartners = new Swiper(".mySwiperPartners", {
+    slidesPerView: 1,
+    loop: true,
+    centeredSlides: true,
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false,
+    },
+    freeMode: {
+      enabled: true,
     },
   });
 });
@@ -187,20 +205,6 @@ const swiper = new Swiper(".mySwiper", {
   autoplay: {
     delay: 5000,
     disableOnInteraction: false,
-  },
-});
-
-// SWIPER SLIDER (PARTNERS)
-const swiperPartners = new Swiper(".mySwiperPartners", {
-  slidesPerView: 1,
-  loop: true,
-  centeredSlides: true,
-  autoplay: {
-    delay: 2000,
-    disableOnInteraction: false,
-  },
-  freeMode: {
-    enabled: true,
   },
 });
 

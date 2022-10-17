@@ -28,7 +28,7 @@ export class News {
             this.newsId
           }" data-slider="${Number.parseInt(
       this.newsId
-    )}">Read more...</a></p>           
+    )}" class="more__news--link">Read more...</a></p>           
         </div>
         <p class="article-news">${this.article}</p>
       </div>
@@ -65,6 +65,37 @@ export class Team {
             </div>
           </div>
         </div>`;
+    return App.createHTMLTemplate(content);
+  }
+}
+
+// TEAM PARTNERS
+export class Partners {
+  constructor(partnersData) {
+    this.photoWEBP = partnersData.photoWEBP;
+    this.photoPNG = partnersData.photoPNG;
+    this.photoAlt = partnersData.photoAlt;
+  }
+  createContentTemplate() {
+    const content = `
+    <div class="swiper-slide">
+    <picture class="partners-img-box">
+      <source
+        srcset="${this.photoWEBP}"
+        type="image/webp"
+      />
+      <source
+        srcset="${this.photoPNG}"
+        type="image/png"
+      />
+      <img
+        src="${this.photoPNG}"
+        alt="${this.photoAlt}"
+        class="partner-img"
+      />
+    </picture>
+  </div>  
+    `;
     return App.createHTMLTemplate(content);
   }
 }
