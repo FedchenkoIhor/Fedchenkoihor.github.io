@@ -2,7 +2,7 @@
 
 import { fetchData, App, setCurrentYear } from "./service.js";
 import { mainHeader, mainFooter, modalWindow } from "./HTMLBlocks.js";
-import { Team, News, socialIcons, Social } from "./class.js";
+import { Team, News, socialIcons, Social, Partners } from "./class.js";
 
 // CREATE HEADER
 customElements.define("main-header", mainHeader);
@@ -52,6 +52,18 @@ obs.observe(sectionHeroEl);
 
 // OPEN / CLOSE MOBILE MENU
 btnMobileMenu.addEventListener("click", closeOpenMenu);
+
+// CLOSE MENU ON CLICK OUTSIDE
+// document.addEventListener("click", function (e) {
+//   console.log(e.target);
+//   if (!e.target.classList.contains(".btn__mobile-menu")) {
+//     if (!e.target.classList.contains(".menu-items")) {
+//       if (btnMobileMenu.classList.contains("open")) {
+//         closeOpenMenu();
+//       }
+//     }
+//   }
+// });
 
 function closeOpenMenu() {
   btnMobileMenu.classList.toggle("open");
