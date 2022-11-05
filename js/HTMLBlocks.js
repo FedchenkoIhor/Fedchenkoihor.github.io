@@ -112,7 +112,7 @@ export class mainFooter extends HTMLElement {
             <div class="soc-box footer">
               <ul class="soc-items socFooter"></ul>
             </div>
-            <li class="footer menu-item btn--show-modal">SUB FOR NEWS</li>
+            <li class="footer menu-item btn--show-modal">SUBSCRIBE FOR NEWS</li>
           </ul>
         </div>
         <div class="footer-box">

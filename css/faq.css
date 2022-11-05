@@ -38,6 +38,11 @@
   color: var(--main-color);
 }
 
+.faq-img {
+  width: 100%;
+  margin-bottom: 2.4rem;
+}
+
 .faq-answer {
   visibility: hidden;
   opacity: 0;

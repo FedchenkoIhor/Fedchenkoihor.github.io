@@ -2,7 +2,14 @@
 
 import { fetchData, App, setCurrentYear } from "./service.js";
 import { mainHeader, mainFooter, modalWindow } from "./HTMLBlocks.js";
-import { Team, News, socialIcons, Social, Partners } from "./class.js";
+import {
+  Team,
+  News,
+  socialIcons,
+  Social,
+  Partners,
+  Features,
+} from "./class.js";
 
 // CREATE HEADER
 customElements.define("main-header", mainHeader);
@@ -110,6 +117,29 @@ App.renderHTMLPart(socialIcons, "socFCXHub", Social, [
   "Twitter",
   "Facebook",
 ]);
+
+/////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////
+// CREATING FEATURES BLOCK
+fetchData("features.json", "GET").then((data) => {
+  const featuresArr = [...data];
+  App.renderHTMLPart(featuresArr, "features-slider", Features);
+  // SWIPER SLIDER (FEATURES)
+  const swiperFeatures = new Swiper(".mySwiperFeatures", {
+    slidesPerView: 1,
+    loop: true,
+    centeredSlides: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    // Navigation arrows
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+});
 
 /////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////
