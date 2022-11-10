@@ -1,6 +1,14 @@
 "use strict";
 
-import { fetchData, App, setCurrentYear } from "./service.js";
+import {
+  fetchData,
+  App,
+  setCurrentYear,
+  API_FEATURES_URL,
+  API_TEAM_URL,
+  API_NEWS_URL,
+  API_PARTNERS_URL,
+} from "./service.js";
 import { mainHeader, mainFooter, modalWindow } from "./HTMLBlocks.js";
 import {
   Team,
@@ -121,7 +129,7 @@ App.renderHTMLPart(socialIcons, "socFCXHub", Social, [
 /////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////
 // CREATING FEATURES BLOCK
-fetchData("features.json", "GET").then((data) => {
+fetchData(API_FEATURES_URL, "GET").then((data) => {
   const featuresArr = [...data];
   App.renderHTMLPart(featuresArr, "features-slider", Features);
   // SWIPER SLIDER (FEATURES)
@@ -144,11 +152,7 @@ fetchData("features.json", "GET").then((data) => {
 /////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////
 // CREATING TEAM BLOCK
-fetchData(
-  "team.json",
-  // "http://194.44.152.74:10102/api/team/members/?pageNumber=1&pageSize=5",
-  "GET"
-).then((data) => {
+fetchData(API_TEAM_URL, "GET").then((data) => {
   const teamArr = [...data];
   App.renderHTMLPart(teamArr, "team-slider", Team);
   // SWIPER SLIDER (TEAM)
@@ -170,7 +174,7 @@ fetchData(
 });
 
 // CREATING PARTNERS BLOCK
-fetchData("partners.json", "GET").then((data) => {
+fetchData(API_PARTNERS_URL, "GET").then((data) => {
   const partnersArr = [...data];
   App.renderHTMLPart(partnersArr, "partners-slider", Partners);
   // SWIPER SLIDER (PARTNERS)
@@ -191,7 +195,7 @@ fetchData("partners.json", "GET").then((data) => {
 /////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////
 // CREATING NEWS BLOCK
-fetchData("news.json", "GET").then((data) => {
+fetchData(API_NEWS_URL, "GET").then((data) => {
   const newsArr = [...data];
   App.renderHTMLPart(newsArr, "news-slider", News, false, 5);
   // SWIPER SLIDER (NEWS)
@@ -235,19 +239,6 @@ followUsBtn.addEventListener("click", () => {
   socBox.offsetHeight === 0
     ? elemShowHidde(socBox, "block")
     : elemShowHidde(socBox, "none");
-});
-
-/////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////
-// SWIPER SLIDER
-const swiper = new Swiper(".mySwiper", {
-  slidesPerView: 1,
-  loop: true,
-  centeredSlides: true,
-  autoplay: {
-    delay: 5000,
-    disableOnInteraction: false,
-  },
 });
 
 /////////////////////////////////////////////////////////////

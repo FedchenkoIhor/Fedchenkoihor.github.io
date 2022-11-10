@@ -1,6 +1,6 @@
 "use strict";
 
-import { fetchData, App, setCurrentYear } from "./service.js";
+import { fetchData, App, setCurrentYear, API_FAQ_URL } from "./service.js";
 import { FAQ } from "./class.js";
 import { shortHeader } from "./HTMLBlocks.js";
 
@@ -13,7 +13,7 @@ setCurrentYear();
 customElements.define("short-header", shortHeader);
 
 // CREATE CONTENT FAQ
-fetchData("FAQ.json", "GET").then((data) => {
+fetchData(API_FAQ_URL, "GET").then((data) => {
   console.log("test");
   const faqArr = [...data];
   App.renderHTMLPart(faqArr, "container-faq", FAQ);

@@ -1,6 +1,6 @@
 "use strict";
 
-import { fetchData, App, setCurrentYear } from "./service.js";
+import { fetchData, App, setCurrentYear, API_NEWS_URL } from "./service.js";
 import { shortHeader } from "./HTMLBlocks.js";
 import { News } from "./class.js";
 
@@ -40,7 +40,7 @@ document.querySelector(".btn__back").addEventListener("click", function (e) {
 });
 
 // CREATING NEWS BLOCK
-fetchData("news.json", "GET").then((data) => {
+fetchData(API_NEWS_URL, "GET").then((data) => {
   const newsArr = [...data];
   const newsArrIndexed = newsArr.map((el, index) => {
     el.newsId = index + 1 + "-" + el.newsId;
